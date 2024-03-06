@@ -1,13 +1,17 @@
 // This whole file db.js is for database connection only
 
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-// Define the mongodb connection URL
-const mongoURL = "mongodb://localhost:27017/hotels"; // replace myDatabase with your database name
+// Define the mongodb connection URL (Local URL)
+//const mongoURL = process.env.db_url_local; // replace myDatabase with your database name
+
+// online mongodb atlas server
+const mongoURL = process.env.db_url_online;
 
 // setup mongodb connection
-mongoose.connect(mongoURL, {
-    // useNewUrlParser : true,
+mongoose.connect(mongoURL, {S
+    // useNewUrlParser : true,S
     // useUnifiedTopology : true
 });
 

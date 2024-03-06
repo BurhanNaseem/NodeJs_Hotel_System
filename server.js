@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const db = require('./db'); // database connection
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());  // the data sent from the client side will be saved in req.body
@@ -17,8 +18,8 @@ const MenuRoutes = require('./Routes/MenuRoutes');
 app.use("/", PersonRoutes);
 app.use("/", MenuRoutes);
 
+const port = process.env.port || 3000;
 
-
-app.listen(3000, function(){
+app.listen(port, function(){
     console.log("server running on port 3000");
 });

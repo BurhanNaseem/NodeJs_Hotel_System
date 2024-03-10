@@ -7,11 +7,11 @@ require('dotenv').config();
 //const mongoURL = process.env.db_url_local; // replace myDatabase with your database name
 
 // online mongodb atlas server
-const mongoURL = process.env.db_url_online;
+const mongoURL = process.env.db_url_local;
 
 // setup mongodb connection
-mongoose.connect(mongoURL, {S
-    // useNewUrlParser : true,S
+mongoose.connect(mongoURL, {
+    // useNewUrlParser : true,
     // useUnifiedTopology : true
 });
 
